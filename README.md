@@ -1,18 +1,3 @@
-# Modern Java - A Guide to Java 8
-_This article was originally posted on [my blog](http://raja.com/posts/2014/03/16/java-8-tutorial/)._
-
-> **You should also read my [Java 11 Tutorial](https://raja.com/posts/2018/09/24/java-11-tutorial/) (including new language and API features from Java 9, 10 and 11).**
-
-Welcome to my introduction to [Java 8](https://jdk8.java.net/). This tutorial guides you step by step through all new language features. Backed by short and simple code samples you'll learn how to use default interface methods, lambda expressions, method references and repeatable annotations. At the end of the article you'll be familiar with the most recent [API](http://download.java.net/jdk8/docs/api/) changes like streams, functional interfaces, map extensions and the new Date API. **No walls of text, just a bunch of commented code snippets. Enjoy!**
-
----
-
-<p align="center">
- ★★★ Like this project? Leave a star, <a href="https://twitter.com/raja_">follow on Twitter</a> or <a href="https://www.paypal.me/raja">donate</a> to support my work. Thanks! ★★★
-</p>
-
----
-
 ## Table of Contents
 
 * [Default Methods for Interfaces](#default-methods-for-interfaces)
@@ -52,7 +37,6 @@ Welcome to my introduction to [Java 8](https://jdk8.java.net/). This tutorial gu
 
 ## Default Methods for Interfaces
 
-Java 8 enables us to add non-abstract method implementations to interfaces by utilizing the `default` keyword. This feature is also known as [virtual extension methods](http://stackoverflow.com/a/24102730). 
 
 Here is our first example:
 
@@ -364,9 +348,6 @@ optional.ifPresent((s) -> System.out.println(s.charAt(0)));     // "b"
 
 A `java.util.Stream` represents a sequence of elements on which one or more operations can be performed. Stream operations are either _intermediate_ or _terminal_. While terminal operations return a result of a certain type, intermediate operations return the stream itself so you can chain multiple method calls in a row. Streams are created on a source, e.g. a `java.util.Collection` like lists or sets (maps are not supported). Stream operations can either be executed sequentially or parallely.
 
-> Streams are extremely powerful, so I wrote a separate [Java 8 Streams Tutorial](http://raja.com/posts/2014/07/31/java8-stream-tutorial-examples/). **You should also check out [Sequency](https://github.com/raja/sequency) as a similiar library for the web.**
-
-Let's first look how sequential streams work. First we create a sample source in form of a list of strings:
 
 ```java
 List<String> stringCollection = new ArrayList<>();
@@ -757,58 +738,3 @@ First, we define a wrapper annotation which holds an array of the actual annotat
 ```
 Java 8 enables us to use multiple annotations of the same type by declaring the annotation `@Repeatable`.
 
-### Variant 1: Using the container annotation (old school)
-
-```java
-@Hints({@Hint("hint1"), @Hint("hint2")})
-class Person {}
-```
-
-### Variant 2: Using repeatable annotations (new school)
-
-```java
-@Hint("hint1")
-@Hint("hint2")
-class Person {}
-```
-
-Using variant 2 the java compiler implicitly sets up the `@Hints` annotation under the hood. That's important for reading annotation information via reflection.
-
-```java
-Hint hint = Person.class.getAnnotation(Hint.class);
-System.out.println(hint);                   // null
-
-Hints hints1 = Person.class.getAnnotation(Hints.class);
-System.out.println(hints1.value().length);  // 2
-
-Hint[] hints2 = Person.class.getAnnotationsByType(Hint.class);
-System.out.println(hints2.length);          // 2
-```
-
-Although we never declared the `@Hints` annotation on the `Person` class, it's still readable via `getAnnotation(Hints.class)`. However, the more convenient method is `getAnnotationsByType` which grants direct access to all annotated `@Hint` annotations.
-
-
-Furthermore the usage of annotations in Java 8 is expanded to two new targets:
-
-```java
-@Target({ElementType.TYPE_PARAMETER, ElementType.TYPE_USE})
-@interface MyAnnotation {}
-```
-
-## Where to go from here?
-
-My programming guide to Java 8 ends here. If you want to learn more about all the new classes and features of the JDK 8 API, check out my [JDK8 API Explorer](http://raja.com/projects/java8-explorer/). It helps you figuring out all the new classes and hidden gems of JDK 8, like `Arrays.parallelSort`, `StampedLock` and `CompletableFuture` - just to name a few.
-
-I've also published a bunch of follow-up articles on my [blog](http://raja.com) that might be interesting to you:
-
-- [Java 8 Stream Tutorial](http://raja.com/posts/2014/07/31/java8-stream-tutorial-examples/)
-- [Java 8 Nashorn Tutorial](http://raja.com/posts/2014/04/05/java8-nashorn-tutorial/)
-- [Java 8 Concurrency Tutorial: Threads and Executors](http://raja.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/)
-- [Java 8 Concurrency Tutorial: Synchronization and Locks](http://raja.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/)
-- [Java 8 Concurrency Tutorial: Atomic Variables and ConcurrentMap](http://raja.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/)
-- [Java 8 API by Example: Strings, Numbers, Math and Files](http://raja.com/posts/2015/03/25/java8-examples-string-number-math-files/)
-- [Avoid Null Checks in Java 8](http://raja.com/posts/2015/03/15/avoid-null-checks-in-java/)
-- [Fixing Java 8 Stream Gotchas with IntelliJ IDEA](http://raja.com/posts/2015/03/05/fixing-java-8-stream-gotchas-with-intellij-idea/)
-- [Using Backbone.js with Java 8 Nashorn](http://raja.com/posts/2014/04/07/using-backbonejs-with-nashorn/)
-
-You should [follow me on Twitter](https://twitter.com/raja_). Thanks for reading!
