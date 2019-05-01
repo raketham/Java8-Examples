@@ -10,7 +10,7 @@ import java.util.Arrays;
 /**
  * Calling java methods from javascript with nashorn.
  *
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Nashorn2 {
 

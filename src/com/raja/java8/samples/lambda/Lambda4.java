@@ -1,7 +1,7 @@
 package com.raja.java8.samples.lambda;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Lambda4 {
 

@@ -3,7 +3,7 @@ package com.raja.java8.samples.stream;
 import java.util.Arrays;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Streams9 {
 

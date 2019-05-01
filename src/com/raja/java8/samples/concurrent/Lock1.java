@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Lock1 {
 

@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.stream.IntStream;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Synchronized2 {
 

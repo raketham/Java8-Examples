@@ -9,7 +9,7 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Streams10 {
 

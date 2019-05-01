@@ -7,7 +7,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Nashorn8 {
     public static void main(String[] args) throws ScriptException, NoSuchMethodException {

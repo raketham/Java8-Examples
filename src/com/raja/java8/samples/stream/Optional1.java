@@ -3,7 +3,7 @@ package com.raja.java8.samples.stream;
 import java.util.Optional;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Optional1 {
 

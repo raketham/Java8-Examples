@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.IntStream;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class LongAdder1 {
 

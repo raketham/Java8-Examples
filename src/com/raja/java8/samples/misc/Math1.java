@@ -1,7 +1,7 @@
 package com.raja.java8.samples.misc;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Math1 {
 

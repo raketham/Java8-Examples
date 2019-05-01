@@ -3,7 +3,7 @@ package com.raja.java8.samples.concurrent;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Threads1 {
 

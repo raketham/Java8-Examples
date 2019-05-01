@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Lock2 {
 

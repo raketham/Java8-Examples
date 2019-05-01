@@ -6,7 +6,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Nashorn7 {
 

@@ -4,7 +4,7 @@ import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Streams4 {
 

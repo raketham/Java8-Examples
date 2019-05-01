@@ -8,7 +8,7 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author Benjamin rajarg
+ * @author raja
  */
 public class Streams12 {
 
